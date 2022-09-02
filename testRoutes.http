@@ -1,0 +1,38 @@
+POST http://localhost:3000/quotes
+Content-Type: application/json
+
+[
+  {
+    "pet": "Dog",
+    "years":  2,
+    "breed" : "spaniel",
+    "area" : "B32"
+  },
+  {
+    "pet": "Dog",
+    "years":  2,
+    "breed" : "poodle",
+    "area" : "SE23"
+  }
+]
+
+###
+
+POST http://localhost:3000/quotes
+Content-Type: application/json
+
+[
+  {
+    "pet": "Dog",
+    "years":  10,
+    "breed" : "spaniel",
+    "area" : "B32"
+  },
+  {
+    "pet": "Dog",
+    "years":  23,
+    "breed" : "alsatian",
+    "area" : "SE23"
+  }
+]
+
