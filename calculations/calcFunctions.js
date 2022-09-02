@@ -29,84 +29,17 @@
 // 0-5 years = 120*1.05^(n)
 // 6-10 years = 120*1.05^(5)*1.1^(n)
 
-const basePrice = 120
-
-const discountedBreeds = [
-  `alsatian`,
-  `poodle`,
-  `shih tzu`
-]
-
-const IncreasedAreas = [
-  `SE10`,
-  `B32`,
-  `NW10`
-]
-
-export const calculateIncreaseByYears = (n)=> {
-  if (n >= 6) {
-    return calculatePriceSixAndPlus(n)
-  }
-  if (n >= 0 && n < 6) {
-    return calculatePriceUnderSix(n)
-  }
-  return 0;
-}
-
-const calculatePriceUnderSix =(n)=> {
-   console.log(`basePrice >>`, basePrice);
-  let calc = basePrice*0.05*n
-  
-  console.log(`calc >>`, calc);
-  return calc;
-}
-
-const calculatePriceSixAndPlus =(n)=> {
-     console.log(`basePrice >>`, basePrice);
-    let calc = basePrice*0.25 + basePrice*0.1*(n-5)
-     console.log(`calc >>`, calc);
-    return calc;
-}
-
-const isDiscountedBreed = (breed) => {
-  const result = discountedBreeds.some((item) => item === breed)
-  console.log(`isDiscountedBreed >>`, result)
-  return result
-
-}
-
-// console.log(`isDiscountedBreed`);
-// isDiscountedBreed(`poodle`)
-
-export const calculateDiscountByBreed = (breed) => {
-  let result = 0
-  if (isDiscountedBreed(breed)) {
-    result = -0.1
-    console.log(`isDiscountedBreed Result>>`, result)
-    return result
-  }
-  console.log(`isDiscountedBreed Result>>`, result)
-  return result
-}
 
 
-const isIncreasedArea = (area) => {
-  const result = IncreasedAreas.some((item) => item === area)
-  console.log(`isIncreasedArea >>`, result)
-  return result
 
-}
 
-export const calculateIncreaseByArea = (area) => {
-  let result = 0
-  if (isIncreasedArea(area)) {
-    result = 0.15
-    console.log(`calculateIncreaseByArea Result>>`, result)
-    return result
-  }
-  console.log(`calculateIncreaseByArea Result>>`, result)
-  return result
-}
+
+
+
+
+
+
+
 
 //calculatePriceFivePlus(10);
 console.log(`10 year`);
@@ -117,13 +50,3 @@ console.log(`calculateDiscountByBreed`)
 calculateDiscountByBreed(`dog`)
 calculateIncreaseByArea(`BBBB`)
 
-export const isMultiplePets = (arr) => {
-  let result = 0
-  if (arr.length > 1) {
-    result = -0.1
-    console.log(`isMultiplePets Result>>`, result)
-    return result
-  }
-  console.log(`isMultiplePets Result>>`, result)
-  return result
-}

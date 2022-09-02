@@ -1,11 +1,20 @@
 //PLAN
 
 import {
-  isMultiplePets,
-  calculateIncreaseByArea,
-  calculateDiscountByBreed,
+  isMultiplePets
+} from './isMultiplePets.js'
+
+import {
+  calculateIncreaseByArea
+} from './calculateIncreaseByArea.js'
+
+import {
+  calculateDiscountByBreed
+} from './calculateDiscountByBreed.js'
+
+import {
   calculateIncreaseByYears
-} from './calcFunctions.js'
+} from './calculateIncreaseByYears.js'
 
 const testArray = [
   {	
@@ -14,12 +23,12 @@ const testArray = [
     Breed : `spaniel`,
     Area : `B32`
   },
-  {	
-    Pet: `Dog`,
-    Years:  2,
-    Breed : `shih tzu`,
-    Area : `SE23`
-  }
+  // {	
+  //   Pet: `Dog`,
+  //   Years:  2,
+  //   Breed : `shih tzu`,
+  //   Area : `SE23`
+  // }
   ]
 
 const basePrice = 120
@@ -45,10 +54,11 @@ const buildQuoteForEach = (obj, isMultiplePetsResult) => {
 export const buildQuoteForArray = (array) => {
 
   const isMultiplePetsResult = isMultiplePets(array)
+  console.log(`isMultiplePetsResult >> from the `, isMultiplePetsResult)
 
-  const totalQuote = array.reduce((prev, current)=> 
-    prev + buildQuoteForEach(current, isMultiplePetsResult), 0)
-  console.log(`totalQuote >>` , totalQuote)
+  // const totalQuote = array.reduce((prev, current)=> 
+  //   prev + buildQuoteForEach(current, isMultiplePetsResult), 0)
+  // console.log(`totalQuote >>` , totalQuote)
   return totalQuote;
 }
 
@@ -58,5 +68,5 @@ const testArray1 = [
 ]
 
 //test
-buildQuoteForArray(testArray1, 0)
+buildQuoteForArray(testArray)
 
