@@ -12,11 +12,11 @@ const basePrice = 120
 
 const calculatePriceUnderSix =(n)=> {
 
-  console.log(`n >>`, n);
+  // console.log(`n >>`, n);
    
   let calc = 0.05*n
   
-  console.log(`calculatePriceUnderSix >>`, calc);
+  // console.log(`calculatePriceUnderSix >>`, calc);
   return calc;
 }
 
@@ -26,7 +26,7 @@ const calculatePriceSixAndPlus =(n)=> {
      }
      
      let calc = 0.25 + 0.1*(n-5)
-     console.log(`calculatePriceSixAndPlus >>`, calc);
+    //  console.log(`calculatePriceSixAndPlus >>`, calc);
     return calc;
 }
 

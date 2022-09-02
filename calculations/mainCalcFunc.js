@@ -1,8 +1,8 @@
 //PLAN
 
-import {
-  isMultiplePets
-} from './isMultiplePets.js'
+// import {
+//   isMultiplePets
+// } from './isMultiplePets.js'
 
 import {
   calculateIncreaseByArea
@@ -18,22 +18,22 @@ import {
 
 const testArray = [
   {	
-    Pet: `Dog`,
-    Years:  2,
-    Breed : `spaniel`,
-    Area : `B32`
+    pet: `Dog`,
+    years:  2,
+    breed : `spaniel`,
+    area : `B32`
   },
-  // {	
-  //   Pet: `Dog`,
-  //   Years:  2,
-  //   Breed : `shih tzu`,
-  //   Area : `SE23`
-  // }
+  {	
+    pet: `Dog`,
+    years:  2,
+    breed : `shih tzu`,
+    area : `SE23`
+  }
   ]
 
 const basePrice = 120
 
-const buildQuoteForEach = (obj, isMultiplePetsResult) => {
+const buildQuoteForEach = (obj) => {
 
   //depending on struc of obj.address may need logic to 
   //get substring of obj.address as postcode for example SE23 
@@ -44,7 +44,6 @@ const buildQuoteForEach = (obj, isMultiplePetsResult) => {
       1 + calculateIncreaseByYears(obj.years)
       + calculateDiscountByBreed(obj.breed)
       + calculateIncreaseByArea(obj.area)
-      + isMultiplePetsResult
     )
 
   console.log(`Individual Quote >>` , individualQuote)
@@ -53,12 +52,23 @@ const buildQuoteForEach = (obj, isMultiplePetsResult) => {
 
 export const buildQuoteForArray = (array) => {
 
-  const isMultiplePetsResult = isMultiplePets(array)
-  console.log(`isMultiplePetsResult >> from the `, isMultiplePetsResult)
+  console.log(`array`, array)
 
-  // const totalQuote = array.reduce((prev, current)=> 
-  //   prev + buildQuoteForEach(current, isMultiplePetsResult), 0)
-  // console.log(`totalQuote >>` , totalQuote)
+
+  // const isMultiplePetsResult = isMultiplePets(array)
+  // console.log(`isMultiplePetsResult >> from the `, isMultiplePetsResult)
+
+  const isMultiplePets = (item) => array.length > 1 ? buildQuoteForEach(item)*0.9 : buildQuoteForEach(item)
+
+  const totalQuote = array.reduce((prev, current)=> 
+    prev + isMultiplePets(current), 0)
+  console.log(`totalQuote >>` , totalQuote)
+  
+  // if(array.length > 1) {
+  //   return totalQuote
+
+  // }
+  
   return totalQuote;
 }
 
@@ -68,5 +78,5 @@ const testArray1 = [
 ]
 
 //test
-buildQuoteForArray(testArray)
+console.log(buildQuoteForArray(testArray))
 

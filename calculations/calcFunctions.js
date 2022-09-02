@@ -42,11 +42,11 @@
 
 
 //calculatePriceFivePlus(10);
-console.log(`10 year`);
-calculateIncreaseByYears(10)
-console.log(`5 year`);
-calculateIncreaseByYears(5)
-console.log(`calculateDiscountByBreed`)
-calculateDiscountByBreed(`dog`)
-calculateIncreaseByArea(`BBBB`)
+// console.log(`10 year`);
+// calculateIncreaseByYears(10)
+// console.log(`5 year`);
+// calculateIncreaseByYears(5)
+// console.log(`calculateDiscountByBreed`)
+// calculateDiscountByBreed(`dog`)
+// calculateIncreaseByArea(`BBBB`)
 
