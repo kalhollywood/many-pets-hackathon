@@ -1,0 +1,10 @@
+POST https://localhost:3000/quotes
+
+{"payload": [ 
+{
+    "pet": "Dog",
+    "years":  2,
+    "breed" : "spaniel",
+    "area" : "B32"
+}
+]}
