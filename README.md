@@ -5,6 +5,7 @@ This hackathon was lots of fun and is something I am keen to continue playing wi
 add.
 
 Full validation of address and breed type from external APIs
-persistent of some form to allow a quote to be revisited for a certain or unlimited time once it has been provided
+
+Persistent of some form to allow a quote to be revisited for a certain or unlimited time once it has been provided
 
 Possibly explore Grafana and Cloudwatch if possible
