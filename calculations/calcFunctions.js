@@ -29,10 +29,55 @@
 // 0-5 years = 120*1.05^(n)
 // 6-10 years = 120*1.05^(5)*1.1^(n)
 
+const basePrice = 120
 
-function getCalc(n){
-    let calc = 120*1.05^(5)*1.1^(n)
-    console.log(calc);
+const discountedBreeds = [
+  `alsatian`,
+  `poodle`,
+  `shih tzu`
+]
+
+const calculatePriceByYears = (n)=> {
+  if (n >= 6) {
+    return calculatePriceFivePlus(n)
+  }
+  return calculatePriceUnderSix(n)
+}
+
+const calculatePriceUnderSix =(n)=> {
+  console.log(`basePrice >>`, basePrice);
+  let calc = (basePrice*0.05)*n
+  console.log(`calc >>`, calc);
+  return calc;
+}
+
+const calculatePriceFivePlus =(n)=> {
+    console.log(`basePrice >>`, basePrice);
+    let calc = (basePrice*0.05)*5 + (basePrice*0.1)*(n-5)
+    console.log(`calc >>`, calc);
     return calc;
 }
-getCalc(10);
+
+const isDiscountedBreed = (breed) => {
+  const result = discountedBreeds.some((item) => item === breed)
+  console.log(`isDiscountedBreed >>`, result)
+  return result
+
+}
+
+console.log(`isDiscountedBreed`);
+isDiscountedBreed(`poodle`)
+
+
+
+
+
+
+
+
+
+//calculatePriceFivePlus(10);
+console.log(`10 year`);
+calculatePriceByYears(10)
+console.log(`5 year`);
+calculatePriceByYears(5)
