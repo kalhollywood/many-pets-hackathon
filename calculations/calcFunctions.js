@@ -45,7 +45,7 @@ const IncreasedAreas = [
 
 export const calculateIncreaseByYears = (n)=> {
   if (n >= 6) {
-    return calculatePriceFivePlus(n)
+    return calculatePriceSixAndPlus(n)
   }
   if (n >= 0 && n < 6) {
     return calculatePriceUnderSix(n)
@@ -55,15 +55,15 @@ export const calculateIncreaseByYears = (n)=> {
 
 const calculatePriceUnderSix =(n)=> {
    console.log(`basePrice >>`, basePrice);
-  let calc = (basePrice*0.05)*n
+  let calc = basePrice*0.05*n
   
   console.log(`calc >>`, calc);
   return calc;
 }
 
-const calculatePriceFivePlus =(n)=> {
+const calculatePriceSixAndPlus =(n)=> {
      console.log(`basePrice >>`, basePrice);
-    let calc = (basePrice*0.05)*5 + (basePrice*0.1)*(n-5)
+    let calc = basePrice*0.25 + basePrice*0.1*(n-5)
      console.log(`calc >>`, calc);
     return calc;
 }
@@ -120,7 +120,7 @@ calculateIncreaseByArea(`BBBB`)
 export const isMultiplePets = (arr) => {
   let result = 0
   if (arr.length > 1) {
-    result = 0.1
+    result = -0.1
     console.log(`isMultiplePets Result>>`, result)
     return result
   }

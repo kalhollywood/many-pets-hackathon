@@ -1,5 +1,12 @@
 //PLAN
 
+import {
+  isMultiplePets,
+  calculateIncreaseByArea,
+  calculateDiscountByBreed,
+  calculateIncreaseByYears
+} from './calcFunctions.js'
+
 const testArray = [
   {	
     Pet: `Dog`,
@@ -14,14 +21,6 @@ const testArray = [
     Area : `SE23`
   }
   ]
-  
-
-import {
-  isMultiplePets,
-  calculateIncreaseByArea,
-  calculateDiscountByBreed,
-  calculateIncreaseByYears
-} from './calcFunctions.js'
 
 const basePrice = 120
 
@@ -31,11 +30,13 @@ const buildQuoteForEach = (obj, isMultiplePetsResult) => {
   //get substring of obj.address as postcode for example SE23 
 
   const individualQuote = 
-    basePrice 
-    + basePrice*calculateIncreaseByYears(obj.years)
-    + basePrice*calculateDiscountByBreed(obj.breed)
-    + basePrice*calculateIncreaseByArea(obj.area)
-    + basePrice*isMultiplePetsResult
+    basePrice * 
+    (
+      1 + calculateIncreaseByYears(obj.years)
+      + calculateDiscountByBreed(obj.breed)
+      + calculateIncreaseByArea(obj.area)
+      + isMultiplePetsResult
+    )
 
   console.log(`Individual Quote >>` , individualQuote)
   return individualQuote
@@ -51,6 +52,11 @@ export const buildQuoteForArray = (array) => {
   return totalQuote;
 }
 
+const testArray1 = [
+  1,
+  2
+]
+
 //test
-buildQuoteForArray(testArray)
+buildQuoteForArray(testArray1, 0)
 
