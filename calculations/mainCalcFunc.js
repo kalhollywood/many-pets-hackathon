@@ -32,10 +32,10 @@ const buildQuoteForEach = (obj, isMultiplePetsResult) => {
 
   const individualQuote = 
     basePrice 
-    + calculateIncreaseByYears(obj.years)
-    + calculateDiscountByBreed(obj.breed)
-    + calculateIncreaseByArea(obj.area)
-    + isMultiplePetsResult
+    + basePrice*calculateIncreaseByYears(obj.years)
+    + basePrice*calculateDiscountByBreed(obj.breed)
+    + basePrice*calculateIncreaseByArea(obj.area)
+    + basePrice*isMultiplePetsResult
 
   console.log(`Individual Quote >>` , individualQuote)
   return individualQuote

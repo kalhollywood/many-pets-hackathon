@@ -118,8 +118,12 @@ calculateDiscountByBreed(`dog`)
 calculateIncreaseByArea(`BBBB`)
 
 export const isMultiplePets = (arr) => {
+  let result = 0
   if (arr.length > 1) {
-    return 0.1
+    result = 0.1
+    console.log(`isMultiplePets Result>>`, result)
+    return result
   }
-  return 0
+  console.log(`isMultiplePets Result>>`, result)
+  return result
 }
