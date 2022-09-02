@@ -14,7 +14,7 @@ router.post("/", async function (req, res) {
   const quote = buildQuoteForArray(pets)
   console.log(buildQuoteForArray(pets))
   try {
-    res.status(201).json({success: true, payload: `£${quote}`});
+    res.status(201).json({success: true, payload: `£${quote.toFixed(2)}`});
   } catch (err) {
     res.status(400).json({success: false, message: err.message });
   }
