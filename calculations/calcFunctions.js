@@ -37,24 +37,34 @@ const discountedBreeds = [
   `shih tzu`
 ]
 
-const calculatePriceByYears = (n)=> {
+const IncreasedAreas = [
+  `SE10`,
+  `B32`,
+  `NW10`
+]
+
+export const calculateIncreaseByYears = (n)=> {
   if (n >= 6) {
     return calculatePriceFivePlus(n)
   }
-  return calculatePriceUnderSix(n)
+  if (n >= 0 && n < 6) {
+    return calculatePriceUnderSix(n)
+  }
+  return 0;
 }
 
 const calculatePriceUnderSix =(n)=> {
-  console.log(`basePrice >>`, basePrice);
+   console.log(`basePrice >>`, basePrice);
   let calc = (basePrice*0.05)*n
+  
   console.log(`calc >>`, calc);
   return calc;
 }
 
 const calculatePriceFivePlus =(n)=> {
-    console.log(`basePrice >>`, basePrice);
+     console.log(`basePrice >>`, basePrice);
     let calc = (basePrice*0.05)*5 + (basePrice*0.1)*(n-5)
-    console.log(`calc >>`, calc);
+     console.log(`calc >>`, calc);
     return calc;
 }
 
@@ -65,19 +75,51 @@ const isDiscountedBreed = (breed) => {
 
 }
 
-console.log(`isDiscountedBreed`);
-isDiscountedBreed(`poodle`)
+// console.log(`isDiscountedBreed`);
+// isDiscountedBreed(`poodle`)
+
+export const calculateDiscountByBreed = (breed) => {
+  let result = 0
+  if (isDiscountedBreed(breed)) {
+    result = -0.1
+    console.log(`isDiscountedBreed Result>>`, result)
+    return result
+  }
+  console.log(`isDiscountedBreed Result>>`, result)
+  return result
+}
 
 
+const isIncreasedArea = (area) => {
+  const result = IncreasedAreas.some((item) => item === area)
+  console.log(`isIncreasedArea >>`, result)
+  return result
 
+}
 
-
-
-
-
+export const calculateIncreaseByArea = (area) => {
+  let result = 0
+  if (isIncreasedArea(area)) {
+    result = 0.15
+    console.log(`calculateIncreaseByArea Result>>`, result)
+    return result
+  }
+  console.log(`calculateIncreaseByArea Result>>`, result)
+  return result
+}
 
 //calculatePriceFivePlus(10);
 console.log(`10 year`);
-calculatePriceByYears(10)
+calculateIncreaseByYears(10)
 console.log(`5 year`);
-calculatePriceByYears(5)
+calculateIncreaseByYears(5)
+console.log(`calculateDiscountByBreed`)
+calculateDiscountByBreed(`dog`)
+calculateIncreaseByArea(`BBBB`)
+
+export const isMultiplePets = (arr) => {
+  if (arr.length > 1) {
+    return 0.1
+  }
+  return 0
+}
