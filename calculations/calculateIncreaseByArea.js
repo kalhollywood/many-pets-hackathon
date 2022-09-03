@@ -1,4 +1,4 @@
-const IncreasedAreas = [
+export const IncreasedAreas = [
   `SE10`,
   `B32`,
   `NW10`
