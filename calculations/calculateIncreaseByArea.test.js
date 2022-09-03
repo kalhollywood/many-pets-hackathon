@@ -11,7 +11,7 @@ describe('check that calculateIncreaseByArea correctly increases the quote for t
     IncreasedAreas.forEach((area) => 
       test(`this area returns the increase 0.15 = 15%`,
         () => {
-          expect(calculateIncreaseByArea(area)).toEqual(0.2)
+          expect(calculateIncreaseByArea(area)).toEqual(0.15)
         }
       )
     ) 
