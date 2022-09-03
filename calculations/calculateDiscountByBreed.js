@@ -1,4 +1,4 @@
-const discountedBreeds = [
+export const discountedBreeds = [
   `alsatian`,
   `poodle`,
   `shih tzu`
