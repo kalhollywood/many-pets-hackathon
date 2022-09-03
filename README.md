@@ -8,4 +8,8 @@ Full validation of address and breed type from external APIs
 
 Persistent of some form to allow a quote to be revisited for a certain or unlimited time once it has been provided
 
+Jest unit tests for all functions
+
+Supertest for routes if possible
+
 Possibly explore Grafana and Cloudwatch if possible
