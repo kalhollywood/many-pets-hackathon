@@ -15,12 +15,12 @@ add.
 ## Reflections
 
 - Was fun to get this up and running - still a lot of tidying up to do
-  - [ ] the object structure that is expected on POST isn't ideal
-    - [ ] some logic to deconstruct address into postcode or at least postcode into area would be better than those three all being key value pairs
-  - [ ] tidy up console logs!
-  - [ ] more tests
-    - [ ] work out the best way (or if its needed?) to test the whole fetch (currently just logic that works on the response is tested)
-    - [ ] replace the dummy tests for the last few functions with real tests
+  - the object structure that is expected on POST isn't ideal
+    - some logic to deconstruct address into postcode or at least postcode into area would be better than those three all being key value pairs
+  - tidy up console logs!
+  - more tests
+    - work out the best way (or if its needed?) to test the whole fetch (currently just logic that works on the response is tested)
+    - replace the dummy tests for the last few functions with real tests
     
 ###Learning 
 
