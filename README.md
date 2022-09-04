@@ -1,7 +1,7 @@
 # PetsQuotationHackathon
 
 ## What I set out to do
-API simplified quotation for pets building off a forked repo from our teams hackathon through School of Code.
+API simplified quotation for pets building off a forked repo from our teams hackathon through School of Code. Using Node.js with express for the server.
 
 This hackathon was lots of fun and is something I am keen to continue playing with. As we were limited to four hours of work there are a number of features I'd like to 
 add.
