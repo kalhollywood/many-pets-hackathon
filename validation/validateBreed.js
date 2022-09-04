@@ -16,9 +16,9 @@ export const validateBreed = async (species, breed) => {
   const data = await response.json();
 
   console.log(`data >>`, data)
-
-  const isValidated = data.length > 0 ? true : false
     
-  return isValidated
+  return isValidated(data)
 
 }
+
+export const isValidated = (data)=> Array.isArray(data) && data.length > 0 ? true : false
