@@ -1,7 +1,7 @@
 import {describe, test, expect} from "@jest/globals";
 
 // import { validateBreed } from "./validateBreed.js";
-import { isValidated } from "./validateBreed.js";
+import { isBreedValidated } from "./validateBreed.js";
 
 
 //NOTE unsure if Jest should be used to test fetch 
@@ -30,31 +30,31 @@ describe('check isValidated correctly validates a series of arrays and objects',
     console.log(`1st test`, Date())
     test(`integer`,
       async () => {
-        expect(isValidated(1)).toBe(false)
+        expect(isBreedValidated(1)).toBe(false)
       }
     )
     console.log(`2nd test`, Date())
     test(`object`,
       async () => {
-        expect(isValidated({foo: `bar`})).toBe(false)
+        expect(isBreedValidated({foo: `bar`})).toBe(false)
       }
     )
     console.log(`3rd test`, Date())
     test(`string`,
       async () => {
-        expect(isValidated(`foo`)).toBe(false)
+        expect(isBreedValidated(`foo`)).toBe(false)
       }
     )
     console.log(`4th test`, Date())
     test(`empty array`,
       async () => {
-        expect(isValidated([])).toBe(false)
+        expect(isBreedValidated([])).toBe(false)
       }
     )
     console.log(`5th test`, Date())
     test(`1 length array`,
       async () => {
-        expect(isValidated([1])).toBe(true)
+        expect(isBreedValidated([1])).toBe(true)
       }
     )
   }
