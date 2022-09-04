@@ -1,6 +1,6 @@
 import {describe, test, expect} from "@jest/globals";
 
-import { isValidated } from "./validatePostcode.js";
+import { isPostcodeValidated } from "./validatePostcode.js";
 
 
 describe('check that isPostcodeValidated validates postcodes correctly when passed a series of object to simulate the response from the API', 
@@ -8,7 +8,7 @@ describe('check that isPostcodeValidated validates postcodes correctly when pass
     console.log(`1st test`, Date())
     test(`invalid search response`,
       async () => {
-        expect(await validateBreed({
+        expect(isPostcodeValidated({
           status: 404,
           error: "Invalid postcode"
           })
@@ -18,7 +18,7 @@ describe('check that isPostcodeValidated validates postcodes correctly when pass
     console.log(`2nd test`, Date())
     test(`valid search response`,
       async () => {
-        expect(await validateBreed({
+        expect(isPostcodeValidated({
           status: 200,
           result: {foo: `bar`}
           })
