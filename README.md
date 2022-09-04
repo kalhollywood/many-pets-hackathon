@@ -22,7 +22,7 @@ add.
     - work out the best way (or if its needed?) to test the whole fetch (currently just logic that works on the response is tested)
     - replace the dummy tests for the last few functions with real tests
     
-###Learning 
+### Learning 
 
 Biggest is probably Promise.all - learning that there is a way to await all and return once all resolved was a big one and I imagine quite useful for future projects. I came across a bug when a function that mapped through an array calling an async fetch function wasn't resolving so I spent a decent amount of time looking into that.
 
