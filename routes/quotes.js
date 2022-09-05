@@ -3,7 +3,7 @@ const router = express.Router();
 
 import {buildQuoteForArray} from '../calculations/mainCalcFunc.js'
 
-console.log(buildQuoteForArray)
+// console.log(buildQuoteForArray)
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
